@@ -1,0 +1,47 @@
+name, id, position, hire_date, gender, age, salary, contact_info, address, date_of_birth, national_id, status
+Mathew Murray,14144,System Analyst,31-Aug-20,Female,30,6116,+855 17 913 180,"No. 478, Ramirezfurt, Cambodia",6-Oct-01,473-83-5247,Unemployed
+Kiara Washington,31964,System Analyst,18-Oct-20,Female,42,6057,+855 88 474 655,"No. 326, Michaelside, Cambodia",18-Aug-94,593-89-8086,Unemployed
+Darren Jimenez,82166,HR Specialist,7-Mar-21,Female,27,4555,+855 88 542 956,"No. 776, Stephensontown, Cambodia",24-Feb-80,674-26-7241,Employed
+Donna Carlson,57183,HR Specialist,21-Oct-24,Female,44,6845,+855 93 416 179,"No. 838, Lynchport, Cambodia",1-Jul-94,815-50-4279,Employed
+Daniel Allen,88304,Teacher,22-Jan-22,Male,47,6106,+855 88 238 258,"No. 109, South Joseph, Cambodia",20-Dec-74,157-03-9148,Employed
+Tiffany Castaneda,12008,HR Specialist,2-Nov-23,Male,31,4377,+855 88 164 860,"No. 692, Amystad, Cambodia",8-Jan-95,786-86-8454,Employed
+Jeffrey Sawyer,88231,Project Manager,23-May-20,Male,48,6116,+855 93 607 566,"No. 728, Martinstad, Cambodia",18-Oct-86,382-21-8591,Unemployed
+Jose Gonzales,67923,Project Manager,23-Oct-22,Male,43,5283,+855 98 772 287,"No. 726, Cruzmouth, Cambodia",25-Aug-92,370-44-6869,Employed
+James Walker,17095,Graphic Designer,11-Sep-23,Male,25,6934,+855 88 997 696,"No. 128, North Miranda, Cambodia",21-Sep-90,857-49-9797,Unemployed
+Dennis Henson,36068,Marketing Manager,12-Feb-23,Female,33,4549,+855 12 263 534,"No. 509, Andrewland, Cambodia",30-Jul-78,054-95-4278,Employed
+Alyssa Henderson,65788,Software Engineer,30-May-24,Female,44,4947,+855 12 636 273,"No. 792, North Justinland, Cambodia",29-Jul-85,836-51-3569,Employed
+Jesse Perry,90863,Software Engineer,20-Jan-22,Male,25,5352,+855 12 745 492,"No. 281, Rogersbury, Cambodia",17-Aug-83,239-03-9624,Unemployed
+Jorge Parsons,80244,Graphic Designer,4-Nov-20,Female,24,6613,+855 98 652 433,"No. 599, Faulknerstad, Cambodia",30-Oct-74,828-58-7882,Unemployed
+Regina Leon,33412,Marketing Manager,23-Jun-20,Male,40,6669,+855 98 954 855,"No. 739, North Josephbury, Cambodia",26-Dec-90,576-95-1423,Employed
+Cynthia Wilcox,33014,Marketing Manager,5-Jan-21,Female,24,5251,+855 97 411 750,"No. 919, North Heatherport, Cambodia",21-Mar-76,285-20-6420,Employed
+Kimberly Smith,98607,Teacher,29-Jan-24,Female,50,6073,+855 17 130 714,"No. 399, Port Martinfort, Cambodia",20-May-97,479-17-1503,Unemployed
+Mrs. Miranda Woodard,65339,Marketing Manager,24-Jan-22,Male,45,4291,+855 17 458 308,"No. 770, Bullockborough, Cambodia",8-Oct-77,449-71-0921,Employed
+Stefanie Hardy,60335,Marketing Manager,26-Sep-22,Male,30,4399,+855 17 261 509,"No. 364, Port Tracymouth, Cambodia",28-Sep-92,427-13-6402,Employed
+Jason Young,98171,Customer Support,9-Sep-21,Female,28,5821,+855 97 125 878,"No. 546, West Lori, Cambodia",25-May-79,371-83-9542,Employed
+Christopher Solis,67268,Graphic Designer,20-Jun-21,Male,35,4864,+855 17 296 800,"No. 374, Russellmouth, Cambodia",7-Jan-02,412-14-3580,Unemployed
+Steve Marshall,52279,Teacher,10-Mar-20,Male,45,4039,+855 69 398 724,"No. 57, Hutchinsonport, Cambodia",21-Jun-92,591-19-3739,Unemployed
+Alyssa Simpson,10491,Software Engineer,14-Feb-20,Female,43,4101,+855 93 102 604,"No. 592, South Angelabury, Cambodia",2-Apr-92,349-01-2693,Unemployed
+Amber Hall,56907,Graphic Designer,17-Aug-21,Female,35,5489,+855 69 972 396,"No. 29, Russellburgh, Cambodia",20-Feb-92,226-46-8704,Unemployed
+Christopher Cooke,92633,Customer Support,19-Mar-23,Male,40,4461,+855 97 696 946,"No. 733, Hendersonfurt, Cambodia",1-Oct-83,844-65-6828,Employed
+Christopher Gonzalez,43055,HR Specialist,26-Jul-24,Female,28,6821,+855 69 304 709,"No. 195, Donaldport, Cambodia",31-Dec-93,573-86-0884,Employed
+Stephen Richardson,16054,Graphic Designer,17-May-22,Female,28,4873,+855 69 232 761,"No. 832, Davidchester, Cambodia",28-Nov-01,707-39-9506,Employed
+Katherine Andrews,18015,Data Analyst,4-Mar-24,Male,32,6616,+855 97 378 843,"No. 520, East Sarah, Cambodia",17-Mar-84,862-68-2820,Unemployed
+Joel Castillo,13005,Graphic Designer,13-Jul-24,Male,47,4410,+855 93 415 159,"No. 74, East Lisamouth, Cambodia",18-Feb-91,199-74-5782,Unemployed
+Ann Allen,38735,Graphic Designer,25-Nov-21,Male,28,5252,+855 69 628 180,"No. 65, North Davidton, Cambodia",8-Jan-74,456-68-5056,Employed
+Alex Hobbs,76044,Customer Support,22-Sep-21,Male,47,6990,+855 69 784 154,"No. 243, East Anna, Cambodia",28-Jul-95,623-83-0751,Employed
+Joseph Mccall,66276,HR Specialist,29-Apr-21,Male,33,6280,+855 93 542 648,"No. 23, North Bretttown, Cambodia",5-Mar-88,315-15-2726,Unemployed
+James Reid,99577,Project Manager,6-Oct-22,Male,34,6262,+855 93 596 566,"No. 754, West Kimberly, Cambodia",15-Feb-00,649-10-4045,Employed
+Jennifer Moses,42699,Project Manager,31-Jan-21,Female,26,6899,+855 17 776 829,"No. 411, West Mitchellland, Cambodia",19-Jul-96,341-88-2568,Employed
+Timothy Weber,85544,System Analyst,27-Apr-24,Female,45,5355,+855 93 556 361,"No. 161, Anthonyshire, Cambodia",29-Apr-92,348-56-8903,Employed
+Angela Scott,23899,HR Specialist,24-Jun-23,Male,27,5487,+855 17 458 708,"No. 778, New Juliefort, Cambodia",21-Jan-74,096-86-4550,Employed
+Juan Prince,41734,Customer Support,6-Oct-23,Female,44,6278,+855 97 588 216,"No. 144, Carrieton, Cambodia",14-Jun-82,751-81-2697,Unemployed
+John Doe,10001,Software Engineer,15-Jan-20,Male,28,5800,+855 12 345 678,"No. 123, Phnom Penh, Cambodia",10-Feb-95,123456789,Employed
+Jane Smith,10002,Data Analyst,22-Feb-19,Female,32,5400,+855 98 765 432,"No. 456, Siem Reap, Cambodia",14-Jul-91,987654321,Employed
+Michael Brown,10003,Project Manager,10-Mar-21,Male,35,6700,+855 11 223 344,"No. 789, Battambang, Cambodia",20-Jan-88,654321987,Employed
+Emily Davis,10004,HR Specialist,5-Apr-18,Female,30,5000,+855 17 334 455,"No. 321, Kampot, Cambodia",8-May-93,321654987,Employed
+David Wilson,10005,Accountant,12-May-17,Male,40,4600,+855 15 556 667,"No. 654, Sihanoukville, Cambodia",25-Sep-83,789123456,Unemployed
+Alice Johnson,10006,Marketing Manager,18-Jun-22,Female,29,6200,+855 12 667 778,"No. 987, Kep, Cambodia",12-Jun-94,112233445,Employed
+Ryan Lee,10007,System Analyst,25-Jul-23,Male,27,5900,+855 97 889 900,"No. 741, Takeo, Cambodia",19-Mar-96,334455667,Employed
+Sophia Kim,10008,Graphic Designer,30-Aug-20,Female,26,4800,+855 93 223 344,"No. 852, Kampong Cham, Cambodia",30-Aug-98,445566778,Unemployed
+Chris Miller,10009,Customer Support,14-Sep-18,Male,33,4500,+855 69 334 455,"No. 963, Kratie, Cambodia",10-Oct-89,556677889,Employed
+Laura White,10010,Teacher,20-Oct-19,Female,31,5200,+855 88 556 667,"No. 159, Mondulkiri, Cambodia",25-Apr-92,667788990,Unemployed
