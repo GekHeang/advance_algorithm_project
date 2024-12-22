@@ -7,36 +7,15 @@
 using namespace std;
 
 
-int data_size(){
-    fstream read_from_file;
-    string line;
-    int data_size = 0;
-    read_from_file.open("employee_info.csv", ios:: in);
-    if (read_from_file.is_open())
-    {
-        cout << "The file is open successfully" << endl;
-        getline(read_from_file, line);
-        while (getline(read_from_file, line))
-        {
-            data_size++;
-        }
-        read_from_file.close();  
-        return data_size;
-    }
-    else{
-        cout << "Unable to open the file" << endl;
-    }
-}
 int main(){
     int function_number;
     fstream info_file;
     while (function_number != 0)
     {
-        
         info_file.open("employee_info.csv", ios:: app);
         cout << "Available functions in this program" << endl;
         cout << "1. Add new employee's information"<< endl;
-        cout << "2. Detele employee's information" << endl;
+        cout << "2. Delete employee's information" << endl;
         cout << "3. Update employee's information" << endl;
         cout << "4. Search function" << endl;
         cout << "5. Display employees who is going to retired from next year until next 5 year" << endl;
@@ -48,7 +27,6 @@ int main(){
         if (function_number == 1)
         {
             employee->add_new_employee_info();
-            
             employee->display();
             info_file.close();
         }

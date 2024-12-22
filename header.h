@@ -56,6 +56,7 @@ class employees_data_structure
         cin >> id;
         new_node->id = id;
         cout << "Position: ";
+        cin.ignore();
         getline(cin, position);
         new_node->position = position;
         cout << "Hire date: ";
@@ -71,15 +72,19 @@ class employees_data_structure
         cin >> salary;
         new_node->salary = salary;
         cout << "Contact_info: ";
+        cin.ignore();
         getline(cin, contact_info);
         new_node->contact_info = contact_info;
         cout << "Address: ";
+        cin.ignore();
         getline(cin, address);
         new_node->address = address;
         cout << "date_of_birth: ";
+        cin.ignore();
         getline(cin, date_of_birth);
         new_node->date_of_birth = date_of_birth;
         cout << "national_id: ";
+        cin.ignore();
         getline(cin, national_id);
         new_node->national_id = national_id;
         cout << "status: ";
