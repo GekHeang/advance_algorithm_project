@@ -39,7 +39,8 @@ int main(){
         cout << "2. Detele employee's information" << endl;
         cout << "3. Update employee's information" << endl;
         cout << "4. Search function" << endl;
-        cout << "5. Test id_is_found" << endl;
+        cout << "5. Display employees who is going to retired from next year until next 5 year" << endl;
+        cout << "6. Test id_is_found" << endl;
         cout << "Enter the function's number that you want to use: ";
         cin >> function_number;
         employees_data_structure *employee = new employees_data_structure;
@@ -94,7 +95,7 @@ int main(){
             
         }
 
-        if (function_number == 5){
+        if (function_number == 6){
             int id;
             employee->read_data_from_file_and_load_to_queue();
             cout << "Enter the id that you want to search:";
