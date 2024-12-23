@@ -1,6 +1,8 @@
 #include<fstream>
 #include<sstream>
 #include<string>
+#include<ctime>
+#include<chrono>
 using namespace std;
 struct Node{
     string name;
@@ -213,6 +215,7 @@ class employees_data_structure
         info_file.close();
         deleted_file.close();
     }
+
     int display_size(){
         return size;
     }
@@ -362,6 +365,234 @@ class employees_data_structure
             }
             update_file.close();
         }
+        
+    }
+    
+    void display_data_in_node(Node *temp){
+        cout << temp->name << "," << temp->id << "," << temp->position << "," 
+            << temp->hire_date << "," << temp->gender << "," << temp->age << ","
+            << temp->salary << "," << temp->contact_info << "," 
+            << temp->address << "," << temp->date_of_birth << "," 
+            << temp->national_id << "," << temp->status << ",";
+    }
+    void search(string property, string search_value){
+        read_data_from_file_and_load_to_queue();
+        Node *temp;
+        temp = front;
+        bool found = false;
+        if (temp == NULL)
+        {
+            cout << "Queue is empty" << endl;
+        }
+        
+        if (property == "name")
+        {
+            while (temp != NULL)
+            {
+                if (search_value == temp->name)
+                {
+                    display_data_in_node(temp);
+                    found = true;
+                }
+                temp = temp->next;
+            }   
+            if(found == false){
+                cout << "No data is founded" << endl;
+            }
+        }
+        else if(property =="id"){
+            int converted_id = stoi(search_value);
+            while(temp != NULL){
+                {
+                    if (converted_id == temp->id)
+                    {
+                        found = true;
+                        display_data_in_node(temp);
+                    }
+                    temp = temp->next;
+                }
+
+            }
+            if (found == false)
+            {
+                cout << "No data is founded" << endl;
+            }
+        }
+        else if (property == "hire_date")
+        {
+            while (temp != NULL)
+            {
+                if (search_value == temp->hire_date)
+                {
+                    display_data_in_node(temp);
+                    found = true;
+                }
+                temp = temp->next;
+                
+            }
+            if (found == false)
+            {
+                cout << "No data is founded" << endl;
+            }
+        }
+        else if(property == "gender"){
+            while (temp != NULL)
+            {
+                if (search_value == temp->gender)
+                {
+                    display_data_in_node(temp);
+                    found = true;
+                }
+                temp = temp->next;
+                
+            }
+            if (found == false)
+            {
+                cout << "No data is founded" << endl;
+            }
+            
+        }
+        else if (property == "age")
+        {
+            int converted_age = stoi(search_value);
+            while (temp != NULL)
+            {
+                if (converted_age == temp->age)
+                {
+                    display_data_in_node(temp);
+                    found = true;
+                }
+                temp = temp->next;
+                
+            }
+            if (found == false)
+            {
+                cout << "No data is founded" << endl;
+            }
+        }
+        else if (property == "salary")
+        {
+            float converted_salary = stof(search_value);
+            while (temp != NULL)
+            {
+                if (converted_salary == temp->salary)
+                {
+                    display_data_in_node(temp);
+                    found = true;
+                }
+                temp = temp->next;
+                
+            }
+            if (found == false)
+            {
+                cout << "No data is founded" << endl;
+            }
+        }
+        else if(property == "contact_info"){
+            while (temp != NULL)
+            {
+                if (search_value == temp->contact_info)
+                {
+                    display_data_in_node(temp);
+                    found = true;
+                }
+                temp = temp->next;
+                
+            }
+            if (found == false)
+            {
+                cout << "No data is founded" << endl;
+            }
+        }
+        else if(property == "address"){
+            while (temp != NULL)
+            {
+                if (search_value == temp->address)
+                {
+                    display_data_in_node(temp);
+                    found = true;
+                }
+                temp = temp->next;
+                
+            }
+            if (found == false)
+            {
+                cout << "No data is founded" << endl;
+            }
+        }
+        else if(property == "date_of_birth"){
+            while (temp != NULL)
+            {
+                if (search_value == temp->date_of_birth)
+                {
+                    display_data_in_node(temp);
+                    found = true;
+                }
+                temp = temp->next;
+                
+            }
+            if (found == false)
+            {
+                cout << "No data is founded" << endl;
+            }
+        }
+        else if(property == "national_id"){
+            while (temp != NULL)
+            {
+                if (search_value == temp->national_id)
+                {
+                    display_data_in_node(temp);
+                    found = true;
+                }
+                temp = temp->next;
+                
+            }
+            if (found == false)
+            {
+                cout << "No data is founded" << endl;
+            }
+        }
+        else if(property == "status"){
+            while (temp != NULL)
+            {
+                if (search_value == temp->status)
+                {
+                    display_data_in_node(temp);
+                    found = true;
+                }
+                temp = temp->next;
+                
+            }
+            if (found == false)
+            {
+                cout << "No data is founded" << endl;
+            }
+        }
+        else{
+            cout << "category is not exist" << endl;
+        }
+    }
+
+    int current_year(){
+        chrono::system_clock::now();
+        time_t current_year;
+    }
+    void check_for_future_retire(int option_number, int year, int amount_of_year){
+        read_data_from_file_and_load_to_queue();
+        Node *temp;
+        temp = front;
+        
+        if (option_number == 1)
+        {
+            
+            
+        }
+        else if (option_number == 2)
+        {   int year;
+            cout << "2. Enter the number of years to check for upcoming retirements.";
+            cin >> year;
+        }
+        
         
     }
     ~employees_data_structure(){}

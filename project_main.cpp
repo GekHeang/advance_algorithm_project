@@ -61,7 +61,7 @@ int main(){
             string new_data;
             cout << "Enter the ID that you want to update the information: ";
             cin >> id;
-            cout << "Enter the property that you want to change: ";
+            cout << "Enter the categories that you want to change: ";
             cin >> property;
             cout << "Enter new data: ";
             cin.ignore();
@@ -70,22 +70,34 @@ int main(){
         }
 
         if (function_number == 4){
-            
-        }
+            string category;
+            string searched_data;
+            cout << "Enter the category that you want to search: ";
+            cin.ignore();
+            getline(cin,category);
 
+            cout << "Enter the data you want to search: ";
+            
+            getline(cin, searched_data);
+            employee->search(category, searched_data);
+        }
+        if (function_number == 5)
+        {
+            int option_number;
+            int year;
+            int amount_of_year;
+            cout << "There are 2 methods for checking employees who is going to retire in the future" << endl;
+            cout << "Enter the option that you prefer: ";
+            cin >> option_number;
+            cout << "1. Enter the year you would like to check:";
+            cin >> year;
+            cout << "2. Enter the number of years to check for upcoming retirements.";
+            cin >> amount_of_year;
+
+        }
+        
         if (function_number == 6){
-            int id;
-            employee->read_data_from_file_and_load_to_queue();
-            cout << "Enter the id that you want to search:";
-            cin >> id;
-            employee->id_is_found(id);
-            if (employee->id_is_found(id) == true)
-            {
-                cout << "id is found" << endl;
-            }
-            else{
-                cout << "id is not found" << endl;
-            }
+            
             
             
         }
