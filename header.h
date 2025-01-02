@@ -533,12 +533,13 @@ class employees_data_structure
             if (temp == NULL)
             {
                 cout << "No Data in queue" << endl;
+                return;
             }
             
             cout << "Enter the year you would like to check:";
             cin >> year;
 
-            if (year >= 1 && year <= 10){
+            if (year >= current_year() && year <= current_year() + 10){
                 while (temp != NULL)
                 {
                     string dob = temp->date_of_birth;
