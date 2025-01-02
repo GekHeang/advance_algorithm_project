@@ -1,2 +1,1 @@
-yee->check_for_future_retire(option_number);
-        }
+"2. Enter the number of years to check for upcoming retirements."

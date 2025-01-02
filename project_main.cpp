@@ -110,6 +110,7 @@ int main(){
         }
         if (function_number == 7)
         {
+            employee->read_data_from_file_and_load_to_queue();
             cout << "Total Employees in the company is: " << employee->display_size() << endl;
         }
         
