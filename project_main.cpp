@@ -20,6 +20,7 @@ int main(){
         cout << "4. Search function" << endl;
         cout << "5. Display employees who is going to retire in the future" << endl;
         cout << "6. Search for employees hire duration" << endl;
+        cout << "7. Amount of total employees" << endl;
         cout << "Enter the function's number that you want to use: ";
         cin >> function_number;
         employees_data_structure *employee = new employees_data_structure;
@@ -106,6 +107,10 @@ int main(){
             
             employee->check_employees_hire_duration(year);
             
+        }
+        if (function_number == 7)
+        {
+            cout << "Total Employees in the company is: " << employee->display_size() << endl;
         }
         
     }

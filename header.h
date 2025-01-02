@@ -160,30 +160,11 @@ class employees_data_structure
     void write_data_into_file(){
         fstream info_file;
         info_file.open("employee_info.csv", ios::out);
-        fstream deleted_file;
-        deleted_file.open("deleted.csv", ios::out);
-        fstream update_file;
-        update_file.open("update_file.csv", ios::out);
         Node *temp;
         temp = front;
-        deleted_file << "name, id, position, hire_date, gender, age, salary, contact_info, address, date_of_birth, national_id, status"<< endl;
         info_file << "name, id, position, hire_date, gender, age, salary, contact_info, address, date_of_birth, national_id, status"<< endl;
         while (temp != NULL)
         {
-            deleted_file << temp->name << "," 
-                << temp->id << ","
-                << temp->position << ","
-                << temp->hire_date << ","
-                << temp->gender << ","
-                << temp->age << ","
-                << temp->salary << ","
-                << temp->contact_info << ","
-                << temp->address << ","
-                << temp->date_of_birth << ","
-                << temp->national_id << ","
-                << temp->status << ","
-                <<endl;
-
             info_file << temp->name << "," 
                 << temp->id << ","
                 << temp->position << ","
@@ -197,23 +178,10 @@ class employees_data_structure
                 << temp->national_id << ","
                 << temp->status << ","
                 <<endl;
-            update_file << temp->name << "," 
-                << temp->id << ","
-                << temp->position << ","
-                << temp->hire_date << ","
-                << temp->gender << ","
-                << temp->age << ","
-                << temp->salary << ","
-                << temp->contact_info << ","
-                << temp->address << ","
-                << temp->date_of_birth << ","
-                << temp->national_id << ","
-                << temp->status << ","
-                <<endl;
+
             temp = temp->next;
         }
         info_file.close();
-        deleted_file.close();
     }
 
     int display_size(){
@@ -279,32 +247,19 @@ class employees_data_structure
         info_file.close();
     }
 
-    bool check_if_id_exist_(Node *front, int searched_id){
-       if (front != NULL)
-       {
-            if (searched_id == front->id)
-            {
-                return true;
-            }
-            else{
-                return check_if_id_exist_(front->next, searched_id);
-            }
-       }
-        return false;
-    }
-    bool id_is_found(int id){
-        return check_if_id_exist_(front, id);
-    }
-
     Node *id_(Node *front, int id){
         Node *temp;
         temp = front;
-        if (temp->id = id)
+        while (temp != NULL)
         {
-            return temp;
-        }
-        else{
-            temp = temp->next;
+            
+            if (temp->id == id)
+            {
+                return temp;
+            }
+            else{
+                temp = temp->next;
+            }
         }
         cout << "The ID is not exist" << endl;
         return NULL;
@@ -323,7 +278,7 @@ class employees_data_structure
                 temp->name = new_value; 
             }
             else if (property == "position"){
-                temp->position == new_value;
+                temp->position = new_value;
             }
             else if(property == "id"){
                 temp->id = stoi(new_value);                
@@ -343,6 +298,9 @@ class employees_data_structure
             else if(property == "address"){
                 temp->address = new_value;
             }
+            else if(property == "contact_info"){
+                temp->contact_info = new_value;
+            }
             else if(property == "date_of_birth"){
                 temp->date_of_birth = new_value;
             }
@@ -352,18 +310,9 @@ class employees_data_structure
             else if(property == "status"){
                 temp->status = new_value;
             }
-            fstream update_file;
-            update_file.open("update_file.csv", ios::out);
-            if (update_file.is_open())
-            {
-                // update_file << temp->name << "," << temp->id << "," << temp->position << ","
-                //             << temp->hire_date << "," << temp->gender << "," << temp->age << ","
-                //             << temp->salary << "," << temp->contact_info << "," 
-                //             << temp->address << "," << temp->date_of_birth << "," 
-                //             <<temp->national_id << "," << temp->status << ",";
-                write_data_into_file();
-            }
-            update_file.close();
+            
+            write_data_into_file();
+            
         }
         
     }
