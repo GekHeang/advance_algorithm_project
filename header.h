@@ -373,7 +373,7 @@ class employees_data_structure
             << temp->hire_date << "," << temp->gender << "," << temp->age << ","
             << temp->salary << "," << temp->contact_info << "," 
             << temp->address << "," << temp->date_of_birth << "," 
-            << temp->national_id << "," << temp->status << ",";
+            << temp->national_id << "," << temp->status << "," << endl;
     }
     void search(string property, string search_value){
         read_data_from_file_and_load_to_queue();
@@ -577,23 +577,78 @@ class employees_data_structure
         chrono::system_clock::now();
         time_t current_year;
     }
-    void check_for_future_retire(int option_number, int year, int amount_of_year){
+    void check_for_future_retire(int option_number){
         read_data_from_file_and_load_to_queue();
         Node *temp;
         temp = front;
-        
+        int year, amount_of_year;
         if (option_number == 1)
         {
+            if (temp == NULL)
+            {
+                cout << "No Data in queue" << endl;
+            }
             
-            
-        }
-        else if (option_number == 2)
-        {   int year;
-            cout << "2. Enter the number of years to check for upcoming retirements.";
+            cout << "Enter the year you would like to check:";
             cin >> year;
+
+            if (year >= 1 && year <= 10){
+                while (temp != NULL)
+                {
+                    string dob = temp->date_of_birth;
+                    string day_string, year_string;
+                    int converted_day, converted_year;
+                    string month;
+                    stringstream separate(dob);
+                    getline(separate, day_string, '-');
+                    converted_day = stoi(day_string);
+                    getline(separate, month,'-');
+                    getline(separate, year_string, '-');
+                    converted_year = stoi(year_string);
+
+                    if (year - converted_year >= 65){
+                        display_data_in_node(temp);
+                    }
+                    temp = temp->next;
+                    
+                }
+            }
+            else{
+                cout << "input year is too early or too far into the future";
+            }     
         }
-        
-        
+
+        else if (option_number == 2)
+        {
+            if (temp == NULL)
+            {
+                cout << "No Data in queue" << endl;
+            }
+            cout << "2. Enter the number of years to check for upcoming retirements.";
+            cin >> amount_of_year;
+            
+            for (int i = 0; i < amount_of_year; i++)
+            {
+                if (amount_of_year == i+1)
+                {
+                    while (temp != NULL)
+                    {
+                        if (temp->age + i + 1 >= 65)
+                        {
+                            cout << "Employees who are going retire in next " << i + 1 << " year." << endl;
+                            display_data_in_node(temp);
+                        }
+                        temp = temp->next;
+                    }
+                    cout << "---------------------------------------------------------------------------" << endl;
+                        
+                }
+                else{
+                    cout << "There is no employee who is going to retire in next " << i + 1 << " year." << endl;
+                    cout << "---------------------------------------------------------------------------" << endl;
+                } 
+            }
+        }   
     }
     ~employees_data_structure(){}
 };

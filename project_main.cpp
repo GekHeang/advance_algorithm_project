@@ -18,7 +18,7 @@ int main(){
         cout << "2. Delete employee's information" << endl;
         cout << "3. Update employee's information" << endl;
         cout << "4. Search function" << endl;
-        cout << "5. Display employees who is going to retired from next year until next 5 year" << endl;
+        cout << "5. Display employees who is going to retire in the future" << endl;
         cout << "6. Test id_is_found" << endl;
         cout << "Enter the function's number that you want to use: ";
         cin >> function_number;
@@ -81,19 +81,18 @@ int main(){
             getline(cin, searched_data);
             employee->search(category, searched_data);
         }
+        
         if (function_number == 5)
         {
             int option_number;
             int year;
             int amount_of_year;
             cout << "There are 2 methods for checking employees who is going to retire in the future" << endl;
+            cout << "1. Enter the year you would like to check." << endl;
+            cout << "2. Enter the number of years to check for upcoming retirements." << endl;
             cout << "Enter the option that you prefer: ";
             cin >> option_number;
-            cout << "1. Enter the year you would like to check:";
-            cin >> year;
-            cout << "2. Enter the number of years to check for upcoming retirements.";
-            cin >> amount_of_year;
-
+            employee->check_for_future_retire(option_number);
         }
         
         if (function_number == 6){
