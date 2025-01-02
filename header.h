@@ -573,10 +573,7 @@ class employees_data_structure
         }
     }
 
-    int current_year(){
-        chrono::system_clock::now();
-        time_t current_year;
-    }
+
     void check_for_future_retire(int option_number){
         read_data_from_file_and_load_to_queue();
         Node *temp;
@@ -649,6 +646,47 @@ class employees_data_structure
                 } 
             }
         }   
+    }
+
+    int current_year(){
+        time_t now = time(0);
+        tm* local_time = localtime(&now);
+        int current_year = 1900 + local_time->tm_year;
+
+        return current_year;
+    }
+
+    void check_employees_hire_duration(int year){
+        read_data_from_file_and_load_to_queue();
+        Node *temp;
+        temp = front;
+        string hire_date;
+        int int_hire_date_year, int_hire_date_day;
+        string string_hire_date_year, string_hire_date_day;
+        string hire_date_month;
+        if (year >= 1 && year <= 40)
+        {
+            cout << "Employee who are working for up to "<< year << " year" << endl;
+            
+            while (temp != NULL)
+            {
+                hire_date = temp->hire_date;
+                stringstream separate(hire_date);
+                getline(separate, string_hire_date_day, '-');
+                int_hire_date_day = stoi(string_hire_date_day);
+                getline(separate, hire_date_month, '-');
+                getline(separate, string_hire_date_year, '-');
+                int_hire_date_year = stoi(string_hire_date_year);
+                if(current_year() - int_hire_date_year >= year){
+                    display_data_in_node(temp);
+                }
+                temp = temp->next;
+            }
+            cout << "---------------------------------------------------------------------------" << endl;
+            
+            
+        }
+
     }
     ~employees_data_structure(){}
 };

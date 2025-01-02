@@ -19,7 +19,7 @@ int main(){
         cout << "3. Update employee's information" << endl;
         cout << "4. Search function" << endl;
         cout << "5. Display employees who is going to retire in the future" << endl;
-        cout << "6. Test id_is_found" << endl;
+        cout << "6. Search for employees hire duration" << endl;
         cout << "Enter the function's number that you want to use: ";
         cin >> function_number;
         employees_data_structure *employee = new employees_data_structure;
@@ -96,8 +96,15 @@ int main(){
         }
         
         if (function_number == 6){
+            int year;
+            do
+            {
+                cout << "search function for hire duration year limit is from 1 until 40." << endl;
+                cout << "Enter the employing year that you want to check: ";
+                cin >> year;
+            } while (year < 1 || year > 40);
             
-            
+            employee->check_employees_hire_duration(year);
             
         }
         
