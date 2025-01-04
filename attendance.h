@@ -2,7 +2,7 @@
 #include<iostream>
 #include<fstream>
 #include<sstream>
-#include "header.h"
+
 using namespace std;
 struct Attendance_node
 {
@@ -226,18 +226,25 @@ class attendance_data_structure{
     }
 
     void update_leave_report(int id, string category, string new_value){
+        load_to_queue();
         int need_conversion;
         Attendance_node *temp = check_if_id_exist(id);
+        if (temp == NULL)
+        {
+            cout << "No data is found." << endl;
+            return;
+        }
+        
         if(temp != NULL){
             if (category == "name")
             {
                 temp->name = new_value;
             }
-            else if (category == "id")
-            {
-                need_conversion = stoi(new_value);
-                temp->id = need_conversion;
-            }
+            // else if (category == "id")
+            // {
+            //     need_conversion = stoi(new_value);
+            //     temp->id = need_conversion;
+            // }
             else if(category == "status"){
                 temp->status = new_value;
             }
@@ -256,7 +263,6 @@ class attendance_data_structure{
     }
  
     void search_attendance_function(string category, string searched_value){
-        load_to_queue();
         Attendance_node *temp;
         temp = front;
         bool found = false;

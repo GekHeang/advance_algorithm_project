@@ -13,7 +13,7 @@ int main(){
     fstream info_file;
     while (function_number != 0)
     {
-        info_file.open("employee_info.csv", ios:: app);
+        // info_file.open("employee_info.csv", ios:: app);
         cout << "Available functions in this program" << endl;
         cout << "1. Add new employee's information"<< endl;
         cout << "2. Delete employee's information" << endl;
@@ -117,13 +117,15 @@ int main(){
             employee->read_data_from_file_and_load_to_queue();
             cout << "Total Employees in the company is: " << employee->display_size() << endl;
         }
+
+        
         if (function_number == 8)
         {
             employee->read_data_from_file_and_load_to_queue();
             
             int id;
             string name;
-            string status;
+            string attendance_status;
             cout << "Enter employee ID: ";
             cin >> id;
             cout << "Enter employee name: ";
@@ -132,14 +134,15 @@ int main(){
             if (employee->id_for_update_function(id) != NULL)
             {
                 cout << "This employees does exists" << endl;
-                cout << "Enter the status: ";
-                cin >> status;
+                cout << "Enter the attendace status: ";
+                cin >> attendance_status;
 
-                attendance->leave_report(id, name, status);
+                attendance->leave_report(id, name, attendance_status);
             }
-            
-            
         }
+
+       
+        
         
     }
     
