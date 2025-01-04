@@ -2,6 +2,7 @@
 #include<iostream>
 #include<fstream>
 #include<sstream>
+#include "header.h"
 using namespace std;
 struct Attendance_node
 {
@@ -69,26 +70,26 @@ class attendance_data_structure{
         info_file.close();
     }
     void load_to_queue(){
-        fstream attendence_file;
+        fstream attendance_file;
         string line;
-        attendence_file.open("attendent.csv", ios::in);
-        if (!attendence_file.is_open())
+        attendance_file.open("attendance.csv", ios::in);
+        if (!attendance_file.is_open())
         {
             cout << "The file is unable to open" << endl;
             return;
         }
         else{
-            getline(attendence_file,line);
-            while (getline(attendence_file,line))
+            getline(attendance_file,line);
+            while (getline(attendance_file,line))
             {
                 string need_conversion;
                 stringstream seperate(line);
                 getline(seperate, name, ',');
                 getline(seperate, need_conversion,',');
                 id = stoi(need_conversion);
+                getline(seperate, status,',');
                 getline(seperate, reason);
                 getline(seperate, need_conversion,',');
-                getline(seperate, status,',');
                 timeOff = stoi(need_conversion);
                 Attendance_node *temp = new Attendance_node;
                 temp->name = name;
@@ -107,7 +108,7 @@ class attendance_data_structure{
                 size++;
             }
         cout << "Load data from file successfully"<< endl;
-        attendence_file.close();
+        attendance_file.close();
         }
     }
 
@@ -153,7 +154,7 @@ class attendance_data_structure{
         fstream attendance_file;
         attendance_file.open("attendace.csv", ios:: app);
         attendance_file<< temp->name<< "," << temp->id << ","<< temp->status << ","<< temp->reason << ","<< temp->timeOff << endl;
-
+        
         attendance_file.close();
     }
     // det
@@ -179,28 +180,146 @@ class attendance_data_structure{
         }   
     }
     
-    // void display_report(){
-    //     fstream info_file;
-    //     info_file.open("attendent.csv", ios::out);
-    //     Node *temp;
-    //     temp = front;
-    //     while (temp != NULL){
-    //         cout << temp->name << "," 
-    //             << temp->id << ","
-    //             << temp->name << ","
-    //             << temp->status << ","
-    //             << temp->reason << ","
-    //             << temp->timeOff << ","
-    //             <<endl;
-    //         info_file << temp->name << "," 
-    //             << temp->id << ","
-    //             << temp->name << ","
-    //             << temp->status << ","
-    //             << temp->reason << ","
-    //             << temp->timeOff << ","
-    //             <<endl;
-    //         temp = temp->next;
-    //     }
-    //    info_file.close();
-    // }  
+    Attendance_node *check_attendance_id(Attendance_node *front, int id){
+        Attendance_node *temp;
+        temp = front;
+        bool found = false;
+        while(temp != NULL){
+            if (temp->id == id)
+            {
+                found = true;
+                return temp;
+            }
+            else{
+                temp = temp->next;
+            }
+        }
+        if (found == false)
+        {
+            cout << "ID is not found in the system." << endl;
+            return NULL;
+        }
+    }
+    Attendance_node *check_if_id_exist(int id){
+        return check_attendance_id(front, id);
+    }
+    
+    void write_data_to_attendance_file(){
+        Attendance_node *temp;
+        temp = front;
+        fstream attendance_file;
+        attendance_file.open("attendance.csv", ios::out);
+        if (!attendance_file.is_open())
+        {
+            cout << "file is unable to open." << endl;
+        }
+        else{
+            cout << "name,id,status,reason,time_off" << endl;
+            while (temp != NULL)
+            {
+                attendance_file << temp->name << "," << temp->id << "," << temp->status << "," << temp->reason << "," << temp->timeOff << "," << endl;
+                temp = temp->next;
+            }
+            
+        }
+        attendance_file.close();
+    }
+
+    void update_leave_report(int id, string category, string new_value){
+        int need_conversion;
+        Attendance_node *temp = check_if_id_exist(id);
+        if(temp != NULL){
+            if (category == "name")
+            {
+                temp->name = new_value;
+            }
+            else if (category == "id")
+            {
+                need_conversion = stoi(new_value);
+                temp->id = need_conversion;
+            }
+            else if(category == "status"){
+                temp->status = new_value;
+            }
+            else if(category == "reason"){
+                temp->reason = new_value;
+            }
+            else if(category == "time off"){
+                need_conversion = stoi(new_value);
+                temp->timeOff = need_conversion;
+            }
+            else{
+                cout << "Invalid category" << endl;
+            }
+            write_data_to_attendance_file();
+        }
+    }
+ 
+    void search_attendance_function(string category, string searched_value){
+        load_to_queue();
+        Attendance_node *temp;
+        temp = front;
+        bool found = false;
+        if (category == "name")
+        {
+            int total_time_off = 0;
+            while (temp != NULL)
+            {
+                if (searched_value == temp->name)
+                {
+                   display_data_in_node(temp);
+                   found = true;
+                   total_time_off += temp->timeOff;
+                }
+                else{
+                    temp = temp->next;
+                }
+                cout << "total time off of this employee: " << total_time_off << " day" << endl;
+            }
+            if (found == false)
+            {
+                cout << "No data is found" << endl;
+            }
+        }
+        else if (category == "id")
+        {
+            int need_conversion;
+            need_conversion = stoi(searched_value);
+            while (temp != NULL)
+            {
+                if (need_conversion == temp->id)
+                {
+                   display_data_in_node(temp);
+                   found = true;
+                }
+                else{
+                    temp = temp->next;
+                }
+            }
+            if (found == false)
+            {
+                cout << "No data is found" << endl;
+            }
+        }
+        else if (category == "status")
+        {
+            while (temp != NULL)
+            {
+                if (searched_value == temp->status)
+                {
+                   display_data_in_node(temp);
+                   found = true;
+                }
+                else{
+                    temp = temp->next;
+                }
+            }
+            if (found == false)
+            {
+                cout << "No data is found" << endl;
+            }
+        }
+        
+        
+    }
 };
