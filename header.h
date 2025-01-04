@@ -366,6 +366,22 @@ class employees_data_structure
                 cout << "No data is founded" << endl;
             }
         }
+        else if(property =="position"){
+            while (temp != NULL)
+            {
+                if (search_value == temp->position)
+                {
+                    display_data_in_node(temp);
+                    found = true;
+                }
+                temp = temp->next;
+                
+            }
+            if (found == false)
+            {
+                cout << "No data is founded" << endl;
+            }
+        }
         else if (property == "hire_date")
         {
             while (temp != NULL)

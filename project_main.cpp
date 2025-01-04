@@ -23,8 +23,7 @@ int main(){
         cout << "6. Search for employees hire duration" << endl;
         cout << "7. Amount of total employees" << endl;
         cout << "8. Add leave report for employees" << endl;
-        cout << "9. Update leave report" << endl;
-        cout << "10. Search function for employee's attendance" <<endl;
+        cout << "9. Display attendance record" << endl;
         cout << "Enter the function's number that you want to use: ";
         cin >> function_number;
         employees_data_structure *employee = new employees_data_structure;
@@ -122,7 +121,6 @@ int main(){
         if (function_number == 8)
         {
             employee->read_data_from_file_and_load_to_queue();
-            
             int id;
             string name;
             string attendance_status;
@@ -140,12 +138,11 @@ int main(){
                 attendance->leave_report(id, name, attendance_status);
             }
         }
-
-       
-        
-        
+        if(function_number == 9){
+            cout << "name,id,status,reason,time off,date"<<endl;
+            attendance->display_attendance_report();
+        }
+    
     }
-    
-    
     return 0;
 }
