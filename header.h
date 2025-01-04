@@ -119,7 +119,7 @@ class employees_data_structure
         }
     }        
 
-    void display(){
+    void display_and_write_new_data_to_file_for_add_function(){
         fstream info_file;
         info_file.open("employee_info.csv", ios::out);
         Node *temp;
@@ -139,19 +139,19 @@ class employees_data_structure
                 << temp->national_id << ","
                 << temp->status << ","
                 <<endl;
-            // info_file << temp->name << "," 
-            //     << temp->id << ","
-            //     << temp->position << ","
-            //     << temp->hire_date << ","
-            //     << temp->gender << ","
-            //     << temp->age << ","
-            //     << temp->salary << ","
-            //     << temp->contact_info << ","
-            //     << temp->address << ","
-            //     << temp->date_of_birth << ","
-            //     << temp->national_id << ","
-            //     << temp->status << ","
-            //     <<endl;
+            info_file << temp->name << "," 
+                << temp->id << ","
+                << temp->position << ","
+                << temp->hire_date << ","
+                << temp->gender << ","
+                << temp->age << ","
+                << temp->salary << ","
+                << temp->contact_info << ","
+                << temp->address << ","
+                << temp->date_of_birth << ","
+                << temp->national_id << ","
+                << temp->status << ","
+                <<endl;
             temp = temp->next;
         }
         info_file.close();
@@ -252,7 +252,6 @@ class employees_data_structure
         temp = front;
         while (temp != NULL)
         {
-            
             if (temp->id == id)
             {
                 return temp;

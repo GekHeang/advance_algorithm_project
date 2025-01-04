@@ -1,5 +1,6 @@
 #include<iostream>
 #include "header.h"
+#include "attendance.h"
 #include<fstream>
 #include<vector>
 #include<string>
@@ -17,18 +18,21 @@ int main(){
         cout << "1. Add new employee's information"<< endl;
         cout << "2. Delete employee's information" << endl;
         cout << "3. Update employee's information" << endl;
-        cout << "4. Search function" << endl;
+        cout << "4. Search function for employee's information" << endl;
         cout << "5. Display employees who is going to retire in the future" << endl;
         cout << "6. Search for employees hire duration" << endl;
         cout << "7. Amount of total employees" << endl;
+        cout << "8. Add leave report for employees" << endl;
+        cout << "9. Update leave report" << endl;
+        cout << "10. Search function for employee's attendance" <<endl;
         cout << "Enter the function's number that you want to use: ";
         cin >> function_number;
         employees_data_structure *employee = new employees_data_structure;
-
+        attendance_data_structure *attendance = new attendance_data_structure;
         if (function_number == 1)
         {
             employee->add_new_employee_info();
-            employee->display();
+            employee->display_and_write_new_data_to_file_for_add_function();
             info_file.close();
         }
 
@@ -112,6 +116,29 @@ int main(){
         {
             employee->read_data_from_file_and_load_to_queue();
             cout << "Total Employees in the company is: " << employee->display_size() << endl;
+        }
+        if (function_number == 8)
+        {
+            employee->read_data_from_file_and_load_to_queue();
+            
+            int id;
+            string name;
+            string status;
+            cout << "Enter employee ID: ";
+            cin >> id;
+            cout << "Enter employee name: ";
+            cin.ignore();
+            getline(cin, name);
+            if (employee->id_for_update_function(id) != NULL)
+            {
+                cout << "This employees does exists" << endl;
+                cout << "Enter the status: ";
+                cin >> status;
+
+                attendance->leave_report(id, name, status);
+            }
+            
+            
         }
         
     }

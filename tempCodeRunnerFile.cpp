@@ -1,0 +1,1 @@
+attendance->leave_report(id, name);
