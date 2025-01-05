@@ -47,6 +47,7 @@ class employees_data_structure
     }
 
     void add_new_employee_info(){
+        read_data_from_file_and_load_to_queue();
         Node *new_node;
         new_node = new Node;
         cout << "Fill the employee information below." << endl;
@@ -103,6 +104,20 @@ class employees_data_structure
             rear = new_node;
         }
         size++;
+
+        cout << new_node->name << "," 
+                << new_node->id << ","
+                << new_node->position << ","
+                << new_node->hire_date << ","
+                << new_node->gender << ","
+                << new_node->age << ","
+                << new_node->salary << ","
+                << new_node->contact_info << ","
+                << new_node->address << ","
+                << new_node->date_of_birth << ","
+                << new_node->national_id << ","
+                << new_node->status << ","
+                <<endl;
     }
 
     void delete_employee_info(){
@@ -119,43 +134,6 @@ class employees_data_structure
         }
     }        
 
-    void display_and_write_new_data_to_file_for_add_function(){
-        fstream info_file;
-        info_file.open("employee_info.csv", ios::out);
-        Node *temp;
-        temp = front;
-        while (temp != NULL)
-        {
-            cout << temp->name << "," 
-                << temp->id << ","
-                << temp->position << ","
-                << temp->hire_date << ","
-                << temp->gender << ","
-                << temp->age << ","
-                << temp->salary << ","
-                << temp->contact_info << ","
-                << temp->address << ","
-                << temp->date_of_birth << ","
-                << temp->national_id << ","
-                << temp->status << ","
-                <<endl;
-            info_file << temp->name << "," 
-                << temp->id << ","
-                << temp->position << ","
-                << temp->hire_date << ","
-                << temp->gender << ","
-                << temp->age << ","
-                << temp->salary << ","
-                << temp->contact_info << ","
-                << temp->address << ","
-                << temp->date_of_birth << ","
-                << temp->national_id << ","
-                << temp->status << ","
-                <<endl;
-            temp = temp->next;
-        }
-        info_file.close();
-    }
 
     void write_data_into_file(){
         fstream info_file;

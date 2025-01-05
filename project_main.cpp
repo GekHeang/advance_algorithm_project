@@ -31,7 +31,7 @@ int main(){
         if (function_number == 1)
         {
             employee->add_new_employee_info();
-            employee->display_and_write_new_data_to_file_for_add_function();
+            employee->write_data_into_file();
             info_file.close();
         }
 
