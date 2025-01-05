@@ -88,15 +88,7 @@ int main(){
         
         if (function_number == 5)
         {
-            int option_number;
-            int year;
-            int amount_of_year;
-            cout << "There are 2 methods for checking employees who is going to retire in the future" << endl;
-            cout << "1. Enter the year you would like to check." << endl;
-            cout << "2. Enter the number of years to check for upcoming retirements." << endl;
-            cout << "Enter the option that you prefer: ";
-            cin >> option_number;
-            employee->check_for_future_retire(option_number);
+            employee->check_for_future_retire();
         }
         
         if (function_number == 6){

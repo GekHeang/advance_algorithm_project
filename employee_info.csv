@@ -1,7 +1,6 @@
 name, id, position, hire_date, gender, age, salary, contact_info, address, date_of_birth, national_id, status
-Michael Nguyen,4032,Project Manager,12-Oct-2011,Male,70,1500,+855 11-234-567,N0.34_St.200_Meanchey_Phnom Penh_Cambodia,19-Jan-1953,789-012-345-678,Employing,
 Srey Pov,3210,Data Scientist,21-Jul-2016,Female,65,1250,+855 88-678-543,N0.101_St.51_Boeung Tumpun_Phnom Penh_Cambodia,03-Jun-1958,678-901-234-567,Employing,
-Srey Leak,2032,System Analyst,01-Jan-2018,Female,29,650.75,+855 85-678-543,N0.76_St.220_Boeung Keng Kang_Phnom Penh_Cambodia,22-Aug-1994,456-789-012-345,Unemployed,
+Sreyleak Meas,2032,System Analyst,01-Jan-2018,Female,29,650.75,+855 85-678-543,N0.76_St.220_Boeung Keng Kang_Phnom Penh_Cambodia,22-Aug-1994,456-789-012-345,Unemployed,
 Chansovannara Lim,2034,Web Designer,07-Apr-2019,Female,29,600,+855 10-234-567,N0.78_St.63_Chamkarmon_Phnom Penh_Cambodia,22-Aug-1994,456-789-012-345,Employing,
 Sophorn Meas,1023,Software Developer,15-Mar-2018,Female,25,600,+855 12-345-678,N0.56_St.310_Boeung Keng Kang_Phnom Penh_Cambodia,20-Jul-1999,234-567-890-123,Employing,
 David Brown,1546,System Analyst,01-Jan-2015,Male,34,800,+855 23-456-789,N0.12_St.271_Toul Kork_Phnom Penh_Cambodia,14-Dec-1989,345-678-901-234,Employing,
@@ -48,3 +47,4 @@ Sina Khim,6153,Mobile Developer,23-Nov-2017,Female,27,800,+855 17-543-210,N0.88_
 Paul Chang,7604,System Architect,01-Dec-2016,Male,39,1450,+855 89-234-678,N0.77_St.45_Sangkat Tuek Thla_Phnom Penh_Cambodia,18-Jan-1984,789-890-123-456,Employing,
 Srey Oun,4890,Junior QA Engineer,19-Aug-2019,Female,24,600,+855 93-765-123,N0.60_St.233_Sen Sok_Phnom Penh_Cambodia,22-Nov-1999,890-123-456-567,Unemployed,
 Ly Dara,3999,Software Tester,23-May-2022,Male,26,500,+855 10-278-345,hnom_Penh_Cambodia,1-Jan-1999,23-897-211-839,Employing,
+Leaksmey,4111,System Analyst,05-Jan-2024,Female,30,800,+855 12 645-897,Phnom_Penh_Cambodia,12-Dec-1994,145-897-963-897,Employing,
