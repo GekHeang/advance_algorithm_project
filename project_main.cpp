@@ -137,6 +137,9 @@ int main(){
 
                 attendance->leave_report(id, name, attendance_status);
             }
+            else{
+                cout << "This id is not exist" << endl;
+            }
         }
         if(function_number == 9){
             cout << "name,id,status,reason,time off,date"<<endl;

@@ -34,43 +34,7 @@ class attendance_data_structure{
         front = NULL;
         rear = NULL;
     }
-    void load_data_from_employee_info(){
-        fstream info_file;
-        string line;
-        string need_conversion;
-        string temp;
-        info_file.open("employee_info.csv", ios:: in);
-        getline(info_file, line);
-        while(getline(info_file, line)){
-            stringstream seperate(line);
-            getline(seperate, name,',');
-            getline(seperate, need_conversion, ',');
-            id = stoi(need_conversion);
-
-            while (getline(seperate, temp, ','))
-            {
-                
-            }
-
-            Attendance_node *temp;
-            temp = new Attendance_node;
-            temp->name = name;
-            temp->id = id;
-            temp->next = NULL;
-            if (front == NULL)
-            {
-                front = temp;
-                rear = temp;
-            }
-            else{
-                rear->next = temp;
-                rear = temp;
-            }
-            size++;
-            
-        }
-        info_file.close();
-    }
+    
     void load_to_queue(){
         fstream read_file;
         read_file.open("attendance.csv", ios::in);
@@ -110,9 +74,8 @@ class attendance_data_structure{
                     rear = temp;
                 }
                 size++;
-                display_data_in_node(temp);
+                
             }
-            
             
             cout << "Load data to file successfully" << endl;   
             read_file.close();
@@ -130,7 +93,7 @@ class attendance_data_structure{
 
         return to_string(today) + "/" + to_string(month) + "/" + to_string(year);
     }
-    void leave_report(int id, string name, string status){
+    void leave_report(int id, string name, string status){ 
         Attendance_node *new_node;
         new_node = new Attendance_node;
         new_node->name = name;
@@ -146,7 +109,7 @@ class attendance_data_structure{
             cout << "Enter the time off: ";
             cin >> timeOff;
             new_node->timeOff = timeOff;
-            cout << "name\tid\tstatus\treason\ttimeoff" << endl;
+            cout << "name\tid\tstatus\treason\ttimeoff\tdate" << endl;
             display_data_in_node(new_node);
             size++; 
 
